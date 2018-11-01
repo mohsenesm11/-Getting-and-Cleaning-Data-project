@@ -1,195 +1,127 @@
-Code book for Coursera Getting and Cleaning Data course project
-The data set that this code book pertains to is located in the tidy_data.txt file of this repository.
-
-See the README.md file of this repository for background information on this data set.
-
-The structure of the data set is described in the Data section, its variables are listed in the Variables section, and the transformations that were carried out to obtain the data set based on the source data are presented in the Transformations section.
-
-Data
-The tidy_data.txt data file is a text file, containing space-separated values.
-
-The first row contains the names of the variables, which are listed and described in the Variables section, and the following rows contain the values of these variables.
-
-Variables
-Each row contains, for a given subject and activity, 79 averaged signal measurements.
-
-Identifiers
-subject
-
-Subject identifier, integer, ranges from 1 to 30.
-
-activity
-
+DATA DICTIONARY – RUN ANALYSIS
+1.	Activityname	6
 Activity identifier, string with 6 possible values:
+o	WALKING: subject was walking
+o	WALKING_UPSTAIRS: subject was walking upstairs
+o	WALKING_DOWNSTAIRS: subject was walking downstairs
+o	SITTING: subject was sitting
+o	STANDING: subject was standing
+o	LAYING: subject was laying
 
-WALKING: subject was walking
-WALKING_UPSTAIRS: subject was walking upstairs
-WALKING_DOWNSTAIRS: subject was walking downstairs
-SITTING: subject was sitting
-STANDING: subject was standing
-LAYING: subject was laying
-Average of measurements
-All measurements are floating-point values, normalised and bounded within [-1,1].
+2.	Subject	30
+Subject identifier, integer, and ranges from 1 to 30.
+All measurements below are floating-point values, normalised and bounded within [-1,1]
+Average time_domain body acceleration in the X, Y and Z directions:
+3.	time_BodyAcc_mean_X
+4.	time_BodyAcc_mean_Y
+5.	time_BodyAcc_mean_Z
 
-Prior to normalisation, acceleration measurements (variables containing Accelerometer) were made in g's (9.81 m.s⁻²) and gyroscope measurements (variables containing Gyroscope) were made in radians per second (rad.s⁻¹).
-
-Magnitudes of three-dimensional signals (variables containing Magnitude) were calculated using the Euclidean norm.
-
-The measurements are classified in two domains:
-
-Time-domain signals (variables prefixed by timeDomain), resulting from the capture of accelerometer and gyroscope raw signals.
-
-Frequency-domain signals (variables prefixed by frequencyDomain), resulting from the application of a Fast Fourier Transform (FFT) to some of the time-domain signals.
-
-Time-domain signals
-Average time-domain body acceleration in the X, Y and Z directions:
-
-timeDomainBodyAccelerometerMeanX
-timeDomainBodyAccelerometerMeanY
-timeDomainBodyAccelerometerMeanZ
-Standard deviation of the time-domain body acceleration in the X, Y and Z directions:
-
-timeDomainBodyAccelerometerStandardDeviationX
-timeDomainBodyAccelerometerStandardDeviationY
-timeDomainBodyAccelerometerStandardDeviationZ
+Standard deviation of the time_domain body acceleration in the X, Y and Z directions:
+6.	time_BodyAcc_std_X
+7.	time_BodyAcc_std_Y
+8.	time_BodyAcc_std_Z
 Average time-domain gravity acceleration in the X, Y and Z directions:
+9.	time_GravityAcc_mean_X
+10.	time_GravityAcc_mean_Y
+11.	time_GravityAcc_mean_Z
 
-timeDomainGravityAccelerometerMeanX
-timeDomainGravityAccelerometerMeanY
-timeDomainGravityAccelerometerMeanZ
 Standard deviation of the time-domain gravity acceleration in the X, Y and Z directions:
-
-timeDomainGravityAccelerometerStandardDeviationX
-timeDomainGravityAccelerometerStandardDeviationY
-timeDomainGravityAccelerometerStandardDeviationZ
+12.	time_GravityAcc_std_X
+13.	time_GravityAcc_std_Y
+14.	time_GravityAcc_std_Z
 Average time-domain body acceleration jerk (derivation of the acceleration in time) in the X, Y and Z directions:
+15.	time_BodyAccJerk_mean_X
+16.	time_BodyAccJerk_mean_Y
+17.	time_BodyAccJerk_mean_Z
 
-timeDomainBodyAccelerometerJerkMeanX
-timeDomainBodyAccelerometerJerkMeanY
-timeDomainBodyAccelerometerJerkMeanZ
 Standard deviation of the time-domain body acceleration jerk (derivation of the acceleration in time) in the X, Y and Z directions:
 
-timeDomainBodyAccelerometerJerkStandardDeviationX
-timeDomainBodyAccelerometerJerkStandardDeviationY
-timeDomainBodyAccelerometerJerkStandardDeviationZ
+18.	time_BodyAccJerk_std_X
+19.	time_BodyAccJerk_std_Y
+20.	time_BodyAccJerk_std_Z
+
 Average time-domain body angular velocity in the X, Y and Z directions:
+21.	time_BodyGyro_mean_X
+22.	time_BodyGyro_mean_Y
+23.	time_BodyGyro_mean_Z
 
-timeDomainBodyGyroscopeMeanX
-timeDomainBodyGyroscopeMeanY
-timeDomainBodyGyroscopeMeanZ
 Standard deviation of the time-domain body angular velocity in the X, Y and Z directions:
-
-timeDomainBodyGyroscopeStandardDeviationX
-timeDomainBodyGyroscopeStandardDeviationY
-timeDomainBodyGyroscopeStandardDeviationZ
-Average time-domain body angular velocity jerk (derivation of the angular velocity in time) in the X, Y and Z directions:
-
-timeDomainBodyGyroscopeJerkMeanX
-timeDomainBodyGyroscopeJerkMeanY
-timeDomainBodyGyroscopeJerkMeanZ
-Standard deviation of the time-domain body angular velocity jerk (derivation of the angular velocity in time) in the X, Y and Z directions:
-
-timeDomainBodyGyroscopeJerkStandardDeviationX
-timeDomainBodyGyroscopeJerkStandardDeviationY
-timeDomainBodyGyroscopeJerkStandardDeviationZ
-Average and standard deviation of the time-domain magnitude of body acceleration:
-
-timeDomainBodyAccelerometerMagnitudeMean
-timeDomainBodyAccelerometerMagnitudeStandardDeviation
-Average and standard deviation of the time-domain magnitude of gravity acceleration:
-
-timeDomainGravityAccelerometerMagnitudeMean
-timeDomainGravityAccelerometerMagnitudeStandardDeviation
-Average and standard deviation of the time-domain magnitude of body acceleration jerk (derivation of the acceleration in time):
-
-timeDomainBodyAccelerometerJerkMagnitudeMean
-timeDomainBodyAccelerometerJerkMagnitudeStandardDeviation
-Average and standard deviation of the time-domain magnitude of body angular velocity:
-
-timeDomainBodyGyroscopeMagnitudeMean
-timeDomainBodyGyroscopeMagnitudeStandardDeviation
-Average and standard deviation of the time-domain magnitude of body angular velocity jerk (derivation of the angular velocity in time):
-
-timeDomainBodyGyroscopeJerkMagnitudeMean
-timeDomainBodyGyroscopeJerkMagnitudeStandardDeviation
-Frequency-domain signals
+24.	time_BodyGyro_std_X
+25.	time_BodyGyro_std_Y
+26.	time_BodyGyro_std_Z
+Average time_domain body angular velocity jerk (derivation of the angular velocity in time_) in the X, Y and Z directions:
+27.	time_BodyGyroJerk_mean_X
+28.	time_BodyGyroJerk_mean_Y
+29.	time_BodyGyroJerk_mean_Z
+Standard deviation of the time_domain body angular velocity jerk (derivation of the angular velocity in time_) in the X, Y and Z directions:
+30.	time_BodyGyroJerk_std_X
+31.	time_BodyGyroJerk_std_Y
+32.	time_BodyGyroJerk_std_Z
+Average and standard deviation of the time_domain magnitude of body acceleration:
+33.	time_BodyAccMag_mean
+34.	time_BodyAccMag_std
+Average and standard deviation of the time_domain magnitude of gravity acceleration:
+35.	time_GravityAccMag_mean
+36.	time_GravityAccMag_std
+Average and standard deviation of the time_domain magnitude of body acceleration jerk (derivation of the acceleration in time):
+37.	time_BodyAccJerkMag_mean
+38.	time_BodyAccJerkMag_std
+Average and standard deviation of the time_domain magnitude of body angular velocity:
+39.	time_BodyGyroMag_mean
+40.	time_BodyGyroMag_std
+Average and standard deviation of the time_domain magnitude of body angular velocity jerk (derivation of the angular velocity in time):
+41.	time_BodyGyroJerkMag_mean
+42.	time_BodyGyroJerkMag_std
 Average frequency-domain body acceleration in the X, Y and Z directions:
-
-frequencyDomainBodyAccelerometerMeanX
-frequencyDomainBodyAccelerometerMeanY
-frequencyDomainBodyAccelerometerMeanZ
+43.	freq_BodyAcc_mean_X
+44.	freq_BodyAcc_mean_Y
+45.	freq_BodyAcc_mean_Z
 Standard deviation of the frequency-domain body acceleration in the X, Y and Z directions:
-
-frequencyDomainBodyAccelerometerStandardDeviationX
-frequencyDomainBodyAccelerometerStandardDeviationY
-frequencyDomainBodyAccelerometerStandardDeviationZ
+46.	freq_BodyAcc_std_X
+47.	freq_BodyAcc_std_Y
+48.	freq_BodyAcc_std_Z
 Weighted average of the frequency components of the frequency-domain body acceleration in the X, Y and Z directions:
-
-frequencyDomainBodyAccelerometerMeanFrequencyX
-frequencyDomainBodyAccelerometerMeanFrequencyY
-frequencyDomainBodyAccelerometerMeanFrequencyZ
+49.	freq_BodyAcc_meanFreq_X
+50.	freq_BodyAcc_meanFreq_Y
+51.	freq_BodyAcc_meanFreq_Z
 Average frequency-domain body acceleration jerk (derivation of the acceleration in time) in the X, Y and Z directions:
-
-frequencyDomainBodyAccelerometerJerkMeanX
-frequencyDomainBodyAccelerometerJerkMeanY
-frequencyDomainBodyAccelerometerJerkMeanZ
+52.	freq_BodyAccJerk_mean_X
+53.	freq_BodyAccJerk_mean_Y
+54.	freq_BodyAccJerk_mean_Z
 Standard deviation of the frequency-domain body acceleration jerk (derivation of the acceleration in time) in the X, Y and Z directions:
-
-frequencyDomainBodyAccelerometerJerkStandardDeviationX
-frequencyDomainBodyAccelerometerJerkStandardDeviationY
-frequencyDomainBodyAccelerometerJerkStandardDeviationZ
+55.	freq_BodyAccJerk_std_X
+56.	freq_BodyAccJerk_std_Y
+57.	freq_BodyAccJerk_std_Z
 Weighted average of the frequency components of the frequency-domain body acceleration jerk (derivation of the acceleration in time) in the X, Y and Z directions:
+58.	freq_BodyAccJerk_meanFreq_X
+59.	freq_BodyAccJerk_meanFreq_Y
+60.	freq_BodyAccJerk_meanFreq_Z
 
-frequencyDomainBodyAccelerometerJerkMeanFrequencyX
-frequencyDomainBodyAccelerometerJerkMeanFrequencyY
-frequencyDomainBodyAccelerometerJerkMeanFrequencyZ
 Average frequency-domain body angular velocity in the X, Y and Z directions:
-
-frequencyDomainBodyGyroscopeMeanX
-frequencyDomainBodyGyroscopeMeanY
-frequencyDomainBodyGyroscopeMeanZ
+61.	freq_BodyGyro_mean_X
+62.	freq_BodyGyro_mean_Y
+63.	freq_BodyGyro_mean_XZ
 Standard deviation of the frequency-domain body angular velocity in the X, Y and Z directions:
-
-frequencyDomainBodyGyroscopeStandardDeviationX
-frequencyDomainBodyGyroscopeStandardDeviationY
-frequencyDomainBodyGyroscopeStandardDeviationZ
+64.	freq_BodyGyro_std_X
+65.	freq_BodyGyro_std_Y
+66.	freq_BodyGyro_std_X
 Weighted average of the frequency components of the frequency-domain body angular velocity in the X, Y and Z directions:
-
-frequencyDomainBodyGyroscopeMeanFrequencyX
-frequencyDomainBodyGyroscopeMeanFrequencyY
-frequencyDomainBodyGyroscopeMeanFrequencyZ
+67.	freq_BodyGyro_meanFreq_X 
+68.	freq_BodyGyro_meanFreq_Y
+69.	freq_BodyGyro_meanFreq_Z
 Average, standard deviation, and weighted average of the frequency components of the frequency-domain magnitude of body acceleration:
-
-frequencyDomainBodyAccelerometerMagnitudeMean
-frequencyDomainBodyAccelerometerMagnitudeStandardDeviation
-frequencyDomainBodyAccelerometerMagnitudeMeanFrequency
+70.	freq_BodyAccMag_mean
+71.	freq_BodyAccMag_std 
+72.	freq_BodyAccMag_meanFreq 
 Average, standard deviation, and weighted average of the frequency components of the frequency-domain magnitude of body acceleration jerk (derivation of the acceleration in time):
-
-frequencyDomainBodyAccelerometerJerkMagnitudeMean
-frequencyDomainBodyAccelerometerJerkMagnitudeStandardDeviation
-frequencyDomainBodyAccelerometerJerkMagnitudeMeanFrequency
+73.	freq_BodyAccJerkMag_mean 
+74.	freq_BodyAccJerkMag_std
+75.	freq_BodyAccJerkMag_meanFreq
 Average, standard deviation, and weighted average of the frequency components of the frequency-domain magnitude of body angular velocity:
-
-frequencyDomainBodyGyroscopeMagnitudeMean
-frequencyDomainBodyGyroscopeMagnitudeStandardDeviation
-frequencyDomainBodyGyroscopeMagnitudeMeanFrequency
+76.	freq_BodyGyroMag_mean
+77.	freq_BodyGyroMag_std 
+78.	freq_BodyGyroMag_meanFreq
 Average, standard deviation, and weighted average of the frequency components of the frequency-domain magnitude of body angular velocity jerk (derivation of the angular velocity in time):
-
-frequencyDomainBodyGyroscopeJerkMagnitudeMean
-frequencyDomainBodyGyroscopeJerkMagnitudeStandardDeviation
-frequencyDomainBodyGyroscopeJerkMagnitudeMeanFrequency
-Transformations
-The zip file containing the source data is located at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
-
-The following transformations were applied to the source data:
-
-The training and test sets were merged to create one data set.
-The measurements on the mean and standard deviation (i.e. signals containing the strings mean and std) were extracted for each measurement, and the others were discarded.
-The activity identifiers (originally coded as integers between 1 and 6) were replaced with descriptive activity names (see Identifiers section).
-The variable names were replaced with descriptive variable names (e.g. tBodyAcc-mean()-X was expanded to timeDomainBodyAccelerometerMeanX), using the following set of rules:
-Special characters (i.e. (, ), and -) were removed
-The initial f and t were expanded to frequencyDomain and timeDomain respectively.
-Acc, Gyro, Mag, Freq, mean, and std were replaced with Accelerometer, Gyroscope, Magnitude, Frequency, Mean, and StandardDeviation respectively.
-Replaced (supposedly incorrect as per source's features_info.txt file) BodyBody with Body.
-From the data set in step 4, the final data set was created with the average of each variable for each activity and each subject.
-The collection of the source data and the transformations listed above were implemented by the run_analysis.R R script (see README.md file for usage instructions).
+79.	freq_BodyGyroJerkMag_mean
+80.	freq_BodyGyroJerkMag_std 
+81.	freq_BodyGyroJerkMag_meanFreq
